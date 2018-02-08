@@ -8,4 +8,4 @@ elif [ -r $HOME/.anm3rc.awk ]; then
 	CONFIG_FILE="$HOME/.anm3rc.awk"
 fi
 
-AWKPATH=$AWKPATH:/usr/share/anm3 eval "nmfd | gawk -f $CONFIG_FILE"
+AWKPATH=$AWKPATH:/usr/share/anm3:. eval "nmfd | gawk -f $CONFIG_FILE"
