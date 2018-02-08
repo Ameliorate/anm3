@@ -7,5 +7,5 @@ elif [ -r $HOME/.config/anm3/config.awk ]; then
 elif [ -r $HOME/.anm3rc.awk ]; then
 	CONFIG_FILE="$HOME/.anm3rc.awk"
 fi
-echo Starting awk...
+
 AWKPATH=$AWKPATH:/usr/share/anm3:. gawk -f $CONFIG_FILE -
