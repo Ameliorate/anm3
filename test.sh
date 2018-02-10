@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CONFIG_FILE=${ANM3_CONFIG_FILE:-"/etc/anm3rc.awk"}
 
 if [ -r ./anm3rc.awk ]; then
