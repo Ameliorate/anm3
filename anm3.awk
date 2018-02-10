@@ -15,7 +15,23 @@
 #
 # delay - "Delay between keystrokes. Default is 12ms."
 #          I don't know what that means either.
-function key(button, dont_clearmodifiers, delay,     options) {
+function key(button, dont_clearmodifiers, delay) {
+       _generic_key("key", button, dont_clearmodifiers, delay)
+}
+
+# Presses down a key until function `keyup` is called.
+# See function `key` for info about arguments
+function keydown(button, dont_clearmodifiers, delay) {
+	_generic_key("keydown", button, dont_clearmodifiers, delay)
+}
+
+# Unpresses a key pressed with function `keyup`
+# button - See function `key`
+function keyup(button) {
+	_generic_key("keyup", button)
+}
+
+function _generic_key(command, button, dont_clearmodifiers, delay,     options) {
 	options = "--clearmodifiers"
 	if (dont_clearmodifiers) {
 		options = ""
@@ -24,5 +40,6 @@ function key(button, dont_clearmodifiers, delay,     options) {
 		options = options " --delay " delay
 	}
 
-	system("xdotool key " options " " button)
+	system("xdotool " command " " options " " button)
 }
+

@@ -12,3 +12,20 @@
 /-2/ {
 	key("ctrl+v")
 }
+
+/\+4/ {
+	keydown("Prior")
+}
+
+/-4/ {
+	keyup("Prior")
+}
+
+/\+5/ {
+	keydown("Next")
+}
+
+/-5/ {
+	keyup("Next")
+}
+
