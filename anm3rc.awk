@@ -13,7 +13,7 @@
 	key("ctrl+v")
 }
 
-/\+4/ {
+/+4/ {
 	keydown("Prior")
 }
 
@@ -21,7 +21,7 @@
 	keyup("Prior")
 }
 
-/\+5/ {
+/+5/ {
 	keydown("Next")
 }
 
