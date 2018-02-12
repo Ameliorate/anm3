@@ -12,11 +12,8 @@
 #          Aliases exist for "alt", "ctrl", "shift", "super", and "meta" which all map to Foo_L, such as Alt_L and Control_L, etc.
 #
 # dont_clearmodifiers - Makes it such that the keystroke pressed in `button` is combined with the modifier keys pressed by the user.
-#
-# delay - "Delay between keystrokes. Default is 12ms."
-#          I don't know what that means either.
-function key(button, dont_clearmodifiers, delay) {
-       _generic_key("key", button, dont_clearmodifiers, delay)
+function key(button, dont_clearmodifiers) {
+       _generic_key("key", button, dont_clearmodifiers)
 }
 
 # Presses down a key until function `keyup` is called.
@@ -40,8 +37,8 @@ function keyup(button) {
 # text - The contents of this string are typed into the focused window
 #
 # See function `key` for more info about arguments.
-function type(text, dont_clearmodifiers, delay) {
-	_generic_key("type", text, dont_clearmodifiers, delay)
+function type(text, dont_clearmodifiers) {
+	_generic_key("type", text, dont_clearmodifiers)
 }
 
 function _generic_key(command, button, dont_clearmodifiers, delay,     options) {
