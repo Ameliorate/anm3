@@ -31,6 +31,10 @@ function keyup(button) {
 	_generic_key("keyup", button)
 }
 
+function type(text, dont_clearmodifiers, delay) {
+	_generic_key("type", text, dont_clearmodifiers, delay)
+}
+
 function _generic_key(command, button, dont_clearmodifiers, delay,     options) {
 	options = "--clearmodifiers"
 	if (dont_clearmodifiers) {
