@@ -31,6 +31,9 @@ function keyup(button) {
 	_generic_key("keyup", button)
 }
 
+# Types the string given in text.
+# text - The contents of this string are typed into the focused window
+# See function `key` for more info about arguments.
 function type(text, dont_clearmodifiers, delay) {
 	_generic_key("type", text, dont_clearmodifiers, delay)
 }
