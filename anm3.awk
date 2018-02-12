@@ -20,6 +20,10 @@ function key(button, dont_clearmodifiers, delay) {
 }
 
 # Presses down a key until function `keyup` is called.
+#
+# delay - From `man xdotool`: "Delay between keystrokes. Default is 12ms." 
+#	If button is 'a' then a will be typed every delay miliseconds.
+#
 # See function `key` for info about arguments
 function keydown(button, dont_clearmodifiers, delay) {
 	_generic_key("keydown", button, dont_clearmodifiers, delay)
@@ -32,7 +36,9 @@ function keyup(button) {
 }
 
 # Types the string given in text.
+#
 # text - The contents of this string are typed into the focused window
+#
 # See function `key` for more info about arguments.
 function type(text, dont_clearmodifiers, delay) {
 	_generic_key("type", text, dont_clearmodifiers, delay)
