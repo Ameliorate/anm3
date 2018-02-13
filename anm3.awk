@@ -5,6 +5,15 @@
 	close("ps -p $(xdotool getactivewindow getwindowpid) -o comm=")
 }
 
+# Small wrapper around xdotool.
+#
+# command - The contents of this string are passed as the arguments to xdotool
+#
+# Returns the exit code of xdotool.
+function xdo(command) {
+	return system("xdotool " command)
+}
+
 # Presses a key for an instantanious moment.
 # button - From `man xdotool`:
 #          Type a given keystroke. Examples being "alt+r", "Control_L+J", "ctrl+alt+n", "BackSpace".
@@ -50,7 +59,7 @@ function _generic_key(command, button, dont_clearmodifiers, delay,     options) 
 		options = options " --delay " delay
 	}
 
-	system("xdotool " command " " options " " button)
+	xdo(command " " options " " button)
 }
 
 # Automagically activate a keycombo that will be released when the button that triggered the current event is released.
