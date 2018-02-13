@@ -29,3 +29,7 @@
 	keyup("Next")
 }
 
+/+3/ {
+	magic_key("a")
+}
+

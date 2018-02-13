@@ -66,7 +66,7 @@ function magic_key(button, dont_clearmodifiers, delay) {
 # Internal variables:
 # _MAGIC_KEY_LOCK   - If magic_key is currently active.
 # _MAGIC_KEY_BUTTON - The button active with magic_key.
-	if ($0 !~ /$\+/) {
+	if ($0 !~ /+/) {
 		printf "Error in magic_key(%s, %d, %d), not called on + event\n", button, dont_clearmodifiers, delay
 		exit 1
 	}
@@ -79,7 +79,7 @@ function magic_key(button, dont_clearmodifiers, delay) {
 }
 
 {
-	if (/$-|$\+/ && _MAGIC_KEY_LOCK) {
+	if (/-|+/ && _MAGIC_KEY_LOCK) {
 		keyup(_MAGIC_KEY_BUTTON)
 		_MAGIC_KEY_LOCK = 0
 	}
