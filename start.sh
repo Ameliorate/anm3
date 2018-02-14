@@ -10,4 +10,5 @@ elif [ -r $HOME/.anm3rc.awk ]; then
 	CONFIG_FILE="$HOME/.anm3rc.awk"
 fi
 
+cat $CONFIG_FILE | gawk -f configcheck.awk
 AWKPATH=$AWKPATH:/usr/share/anm3:. eval "nmfd | gawk -f $CONFIG_FILE"
